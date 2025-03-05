@@ -1,4 +1,4 @@
-package com.example.yunpicture.model.dto;
+package com.example.yunpicture.model.dto.user;
 
 import lombok.Data;
 

@@ -1,6 +1,8 @@
-package com.example.yunpicture.model.dto;
+package com.example.yunpicture.model.dto.user;
 
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @ClassName -> UserLoginRequest
@@ -10,7 +12,7 @@ import lombok.Data;
  * @Version 3.3
  */
 @Data
-public class UserLoginRequest {
+public class UserLoginRequest implements Serializable {
 
     private static final long serialVersionUID = 6353770182623837675L;
     /**
