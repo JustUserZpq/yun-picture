@@ -23,13 +23,14 @@ import java.util.List;
 
 /**
  * @ClassName -> FileManager
- * @Description
+ * @Description @Deprecated 已废弃，使用upload包模板
  * @Author User
  * @Date 2025/3/6 18:17 星期四
  * @Version 3.3
  */
 @Service
 @Slf4j
+@Deprecated
 public class FileManager {
 
     @Resource
