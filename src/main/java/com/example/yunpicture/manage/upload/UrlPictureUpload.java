@@ -9,6 +9,7 @@ import cn.hutool.http.Method;
 import com.example.yunpicture.exception.BusinessException;
 import com.example.yunpicture.exception.ErrorCode;
 import com.example.yunpicture.exception.ThrowUtils;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -23,6 +24,7 @@ import java.util.List;
  * @Date 2025/3/7 18:42 星期五
  * @Version 3.3
  */
+@Service
 public class UrlPictureUpload extends PictureUploadTemplate {
     @Override
     protected void validPicture(Object inputSource) {
