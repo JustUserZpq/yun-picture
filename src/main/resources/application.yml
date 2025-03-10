@@ -2,6 +2,10 @@ server:
   port: 8123
   servlet:
     context-path: /api
+    # cookie 30 天过期
+    session:
+      cookie:
+        max-age: 2592000
 spring:
   application:
     name: yun-picture
@@ -15,6 +19,22 @@ spring:
   servlet:
     multipart:
       max-file-size: 10MB
+  # Redis 配置
+  redis:
+    database: 1
+    host: 192.168.72.133
+    port: 6379
+    timeout: 5000
+    password: root
+  # session 配置
+  session:
+    store-type: redis
+    # session 30 天过期
+    timeout: 2592000
+
+
+
+
 
 mybatis-plus:
   configuration:
