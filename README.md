@@ -20,9 +20,6 @@
 
 
 
-项目架构设计图：
-
-![image-20250310194030359](C:\JavaProject\Code\yun-picture\README\image-20250310194030359.png)
 
 ## 技术选型
 
