@@ -3,10 +3,8 @@ package com.example.yunpicture.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.yunpicture.model.dto.picture.PictureQueryRequest;
-import com.example.yunpicture.model.dto.picture.PictureReviewRequest;
-import com.example.yunpicture.model.dto.picture.PictureUploadByBatchRequest;
-import com.example.yunpicture.model.dto.picture.PictureUploadRequest;
+import com.example.yunpicture.api.aliyunai.model.CreateOutPaintingTaskResponse;
+import com.example.yunpicture.model.dto.picture.*;
 import com.example.yunpicture.model.entity.Picture;
 import com.example.yunpicture.model.entity.User;
 import com.example.yunpicture.model.vo.PictureVO;
@@ -31,6 +29,13 @@ public interface PictureService extends IService<Picture> {
     PictureVO uploadPicture(Object inputSource,
                             PictureUploadRequest pictureUploadRequest,
                             User loginUser);
+
+    /**
+     * 校验权限
+     * @param loginUser
+     * @param picture
+     */
+    void checkPictureAuth(User loginUser, Picture picture);
 
     /**
      * 分页查询
@@ -91,4 +96,26 @@ public interface PictureService extends IService<Picture> {
      */
     @Async
     void clearPictureFile(Picture oldPicture);
+
+    /**
+     * 删除图片
+     * @param pictureId
+     * @param loginUser
+     */
+    void deletePicture(long pictureId, User loginUser);
+
+    /**
+     * 编辑图片
+     * @param pictureEditRequest
+     * @param loginUser
+     */
+    void editPicture(PictureEditRequest pictureEditRequest, User loginUser);
+
+    /**
+     * 扩图
+     * @param createPictureOutPaintingTaskRequest
+     * @param loginUser
+     * @return
+     */
+    CreateOutPaintingTaskResponse createPictureOutPaintingTask(CreatePictureOutPaintingTaskRequest createPictureOutPaintingTaskRequest, User loginUser);
 }
