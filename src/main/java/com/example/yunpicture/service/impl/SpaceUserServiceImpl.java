@@ -2,8 +2,8 @@ package com.example.yunpicture.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import generator.domain.SpaceUser;
 import com.example.yunpicture.mapper.SpaceUserMapper;
+import com.example.yunpicture.model.entity.SpaceUser;
 import org.springframework.stereotype.Service;
 
 /**

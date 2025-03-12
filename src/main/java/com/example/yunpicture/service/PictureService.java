@@ -3,6 +3,7 @@ package com.example.yunpicture.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.example.yunpicture.api.aliyunai.model.CreateOutPaintingTaskResponse;
 import com.example.yunpicture.model.dto.picture.*;
 import com.example.yunpicture.model.entity.Picture;
 import com.example.yunpicture.model.entity.User;
@@ -109,4 +110,12 @@ public interface PictureService extends IService<Picture> {
      * @param loginUser
      */
     void editPicture(PictureEditRequest pictureEditRequest, User loginUser);
+
+    /**
+     * 扩图
+     * @param createPictureOutPaintingTaskRequest
+     * @param loginUser
+     * @return
+     */
+    CreateOutPaintingTaskResponse createPictureOutPaintingTask(CreatePictureOutPaintingTaskRequest createPictureOutPaintingTaskRequest, User loginUser);
 }

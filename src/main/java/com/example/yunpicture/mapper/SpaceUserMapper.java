@@ -1,7 +1,8 @@
 package com.example.yunpicture.mapper;
 
-import generator.domain.SpaceUser;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.yunpicture.model.entity.SpaceUser;
 
 /**
 * @author User
