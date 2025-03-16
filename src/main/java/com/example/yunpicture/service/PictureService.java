@@ -9,8 +9,10 @@ import com.example.yunpicture.model.entity.Picture;
 import com.example.yunpicture.model.entity.User;
 import com.example.yunpicture.model.vo.PictureVO;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
 * @author User
@@ -30,12 +32,12 @@ public interface PictureService extends IService<Picture> {
                             PictureUploadRequest pictureUploadRequest,
                             User loginUser);
 
-    /**
-     * 校验权限
-     * @param loginUser
-     * @param picture
-     */
-    void checkPictureAuth(User loginUser, Picture picture);
+    ///**
+    // * 校验权限
+    // * @param loginUser
+    // * @param picture
+    // */
+    //void checkPictureAuth(User loginUser, Picture picture);
 
     /**
      * 分页查询
@@ -118,4 +120,21 @@ public interface PictureService extends IService<Picture> {
      * @return
      */
     CreateOutPaintingTaskResponse createPictureOutPaintingTask(CreatePictureOutPaintingTaskRequest createPictureOutPaintingTaskRequest, User loginUser);
+
+    /**
+     * 颜色搜索
+     * @param spaceId
+     * @param picColor
+     * @param loginUser
+     * @return
+     */
+    List<PictureVO> searchPictureByColor(Long spaceId, String picColor, User loginUser);
+
+    /**
+     * 批量处理
+     * @param pictureEditByBatchRequest
+     * @param loginUser
+     */
+    @Transactional(rollbackFor = Exception.class)
+    void editPictureByBatch(PictureEditByBatchRequest pictureEditByBatchRequest, User loginUser);
 }

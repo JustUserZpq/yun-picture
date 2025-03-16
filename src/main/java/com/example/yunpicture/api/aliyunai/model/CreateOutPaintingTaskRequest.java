@@ -47,7 +47,7 @@ public class CreateOutPaintingTaskRequest implements Serializable {
          * 可选，输出图像的宽高比，默认空字符串，不设置宽高比
          * 可选值：["", "1:1", "3:4", "4:3", "9:16", "16:9"]
          */
-        @Alias("output_ratio")
+        @Alias("output_ratio") //将驼峰式格式转化为下划线格式
         private String outputRatio;
 
         /**
